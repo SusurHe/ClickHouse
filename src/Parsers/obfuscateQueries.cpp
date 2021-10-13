@@ -792,7 +792,7 @@ void obfuscateLiteral(std::string_view src, WriteBuffer & result, SipHash hash_f
             ++src_pos;
 
             ReadBufferFromMemory in(src_pos, src_end - src_pos);
-            int16_t num;
+            int16_t num{};
             readIntText(num, in);
             writeIntText(num, result);
             src_pos += in.count();
